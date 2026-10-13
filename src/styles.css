@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Manrope Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand orange — sampled from the Global Racks logo (#FD6D07) */
+  --color-brand-50: #fff4ec;
+  --color-brand-100: #ffe7d3;
+  --color-brand-200: #ffcba6;
+  --color-brand-300: #ffa870;
+  --color-brand-400: #fe8a3c;
+  --color-brand-500: #fd6d07;
+  --color-brand-600: #e85f02;
+  --color-brand-700: #c04e02;
+  --color-brand-800: #993e06;
+  --color-brand-900: #7c3408;
+  --color-brand-950: #431802;
+
+  /* Brand navy — sampled from the Global Racks logo (#063062) */
+  --color-navy-50: #f1f6fb;
+  --color-navy-100: #dfe9f6;
+  --color-navy-200: #c0d3ee;
+  --color-navy-300: #8fb1e2;
+  --color-navy-400: #5a8cd4;
+  --color-navy-500: #2e6cc0;
+  --color-navy-600: #1d57a6;
+  --color-navy-700: #14488a;
+  --color-navy-800: #0b3a72;
+  --color-navy-900: #063062;
+  --color-navy-950: #041f40;
+
+  /* Rack-steel greys — sampled from the logo shelving (#5A5B5F / #808183) */
+  --color-steel-50: #f6f6f7;
+  --color-steel-100: #e8e8ea;
+  --color-steel-200: #d3d3d7;
+  --color-steel-300: #b4b5ba;
+  --color-steel-400: #96979d;
+  --color-steel-500: #808183;
+  --color-steel-600: #6a6b6f;
+  --color-steel-700: #5a5b5f;
+  --color-steel-800: #47484b;
+  --color-steel-900: #333437;
+  --color-steel-950: #1f2022;
+
+  --shadow-card: 0 1px 2px rgb(6 48 98 / 0.06), 0 8px 24px -12px rgb(6 48 98 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(6 48 98 / 0.08), 0 16px 40px -16px rgb(6 48 98 / 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-steel-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-500/25 text-navy-950;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase;
+  }
+}
