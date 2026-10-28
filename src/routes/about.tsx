@@ -5,7 +5,7 @@ import { CtaBand } from '@/components/marketing/cta-band'
 import { JsonLd } from '@/components/marketing/json-ld'
 import { PageHero } from '@/components/marketing/page-hero'
 import { SectionHeading } from '@/components/marketing/section-heading'
-import { site } from '@/content/site'
+import { certifications, site } from '@/content/site'
 import { breadcrumbLd, seoMeta } from '@/lib/seo'
 
 const values = [
@@ -101,7 +101,7 @@ function About() {
               requirements.
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-6">
-              <div className="rounded-2xl bg-navy-950 p-5 text-white">
+              <div className="rounded-2xl bg-navy-900 p-5 text-white">
                 <dt className="text-xs font-semibold tracking-[0.14em] text-brand-300 uppercase">
                   Established
                 </dt>
@@ -138,6 +138,33 @@ function About() {
       </section>
 
       <section className="py-16 sm:py-24">
+        <div className="wrap">
+          <SectionHeading
+            align="center"
+            eyebrow="Certifications"
+            title="Certified to international standards"
+            lead="Our racking systems are designed, fabricated and load-tested against recognised quality, environmental and structural standards."
+          />
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {certifications.map((certification) => (
+              <li
+                key={certification.code}
+                className="rounded-2xl border border-navy-900/10 bg-white p-6 shadow-card"
+              >
+                <BadgeCheck aria-hidden="true" className="size-8 text-brand-500" />
+                <p className="mt-4 font-display text-lg font-bold text-navy-950">
+                  {certification.code}
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-steel-600">
+                  {certification.label}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-steel-50 py-16 sm:py-24">
         <div className="wrap">
           <SectionHeading
             align="center"

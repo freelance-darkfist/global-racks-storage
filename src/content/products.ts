@@ -100,7 +100,7 @@ export const products: Product[] = [
       'Purpose-built for storing long, bulky, and irregularly shaped items. Cantilever racks feature adjustable arms that provide flexibility for various load sizes and configurations.',
     image: '/images/products/cantilever-racks.jpg',
     imageAlt:
-      'Cantilever racks storing long steel pipes and tubes on adjustable orange arms',
+      'Industrial cantilever racks with adjustable arms storing long loads in a warehouse',
     highlightsTitle: 'Key Features',
     highlights: [
       'Single or double-sided configurations for maximum versatility.',
@@ -129,7 +129,7 @@ export const products: Product[] = [
       'High-density storage solution designed for bulk storage of homogeneous products. Achieve up to 75% space utilization with FIFO/LIFO storage methods for maximum warehouse efficiency.',
     image: '/images/products/drive-in-racks.jpg',
     imageAlt:
-      'Drive-in racking lanes with a forklift operating inside a high-density pallet storage tunnel',
+      'Forklift operating inside a high-density drive-in racking aisle stocked with palletised loads',
     highlightsTitle: 'Key Features',
     highlights: [
       'Supports both FIFO and LIFO storage methods',
@@ -190,6 +190,9 @@ export const products: Product[] = [
       'Supports FIFO/LIFO operations with minimal labor requirements.',
       'Perfect for high-density bulk storage of homogeneous products.',
     ],
+    image: '/images/products/radio-shuttle-system.jpg',
+    imageAlt:
+      'Radio shuttle racking system with high-density pallet lanes inside a warehouse',
     highlightsTitle: 'Key Features',
     highlights: [
       'Remote-controlled shuttles move pallets deep inside rack lanes',
@@ -222,6 +225,9 @@ export const products: Product[] = [
       'Ideal for cold storage and high-value inventory management.',
       'Maximizes storage capacity while maintaining direct access.',
     ],
+    image: '/images/products/mobile-racking-system.jpg',
+    imageAlt:
+      'Mobile racking system with trolley-mounted shelving on rails in a modern warehouse',
     highlightsTitle: 'Key Features',
     highlights: [
       'Electrically driven trolley-mounted racks on guided rails',
@@ -249,6 +255,9 @@ export const products: Product[] = [
       'Versatile bolt-free shelving for warehouses, workshops and retail backrooms.',
     description:
       'Versatile and portable storage solution ideal for warehouses, workshops, and retail environments.',
+    image: '/images/products/slotted-angle-racks.jpg',
+    imageAlt:
+      'Slotted angle racks with adjustable galvanised shelves holding cartons and blue bins in a warehouse',
     extraParagraphs: [
       'Easy bolt-free assembly with adjustable shelf heights for various goods.',
       'Lightweight yet durable construction suitable for light to medium loads.',
@@ -286,6 +295,9 @@ export const products: Product[] = [
       'Optimizes warehouse workflow and reduces handling time significantly.',
       'Perfect for perishable goods and high-turnover inventory applications.',
     ],
+    image: '/images/products/gravity-flow-racks.jpg',
+    imageAlt:
+      'Gravity flow racking with cartons moving on roller lanes to the picking face',
     highlightsTitle: 'Key Features',
     highlights: [
       'Gravity rollers move pallets from loading to picking face automatically',
@@ -313,6 +325,9 @@ export const products: Product[] = [
       'Heavy-duty mesh panels (300–1000 kg per deck) that improve rack safety and visibility.',
     description:
       'Heavy-duty wire mesh panels designed to enhance rack safety and visibility. Load capacity range from 300kg to 1000kg per deck, ideal for pallet racking systems.',
+    image: '/images/products/wire-mesh-decking.jpg',
+    imageAlt:
+      'Wire mesh decking panels fitted to pallet racking beams to support cartons and pallets',
     highlightsTitle: 'Wire Mesh Decking Benefits',
     highlights: [
       'Prevents items from falling through rack beams',
@@ -331,36 +346,40 @@ export const products: Product[] = [
       'Wire mesh decking panels with 300–1000kg capacity improve rack safety, visibility and sprinkler penetration. Fits existing pallet racking beams.',
   },
   {
-    slug: 'metal-plastic-pallets',
-    name: 'Metal & Plastic Pallets',
-    menuLabel: 'Pallets',
+    slug: 'metal-pallets-and-metal-bins',
+    name: 'Metal Pallet and Metal Bins',
+    menuLabel: 'Metal Pallets & Bins',
     category: 'Decking & Pallets',
     tagline:
-      'Heavy-duty steel and hygienic plastic pallets with 2-way and 4-way forklift access.',
+      'Heavy-duty steel pallets, stackable metal bins and packing workstations for organised industrial storage.',
     description:
-      'Metal Pallets: Heavy-duty steel construction with 2-way and 4-way forklift access for versatile handling.',
+      'Our metal pallets, metal storage bins and packing workstations provide durable, space-efficient solutions for organized industrial storage and packing operations. Built for demanding warehouse and manufacturing environments, they support reliable storage, safe handling and efficient packing workflows.',
     extraParagraphs: [
-      'High load capacity for industrial applications.',
-      'Plastic Pallets: Lightweight, hygienic option ideal for food and pharmaceutical storage.',
-      'Corrosion-resistant and easy to clean.',
+      'Metal pallets: heavy-duty steel construction with 2-way and 4-way forklift access.',
+      'Stackable metal bins optimise vertical space for components, cartons and small parts.',
+      'Packing workstations create a dedicated space for packing tasks.',
     ],
-    highlightsTitle: 'Pallet Solutions',
+    image: '/images/products/metal-pallets-and-metal-bins.jpg',
+    imageAlt:
+      'Steel pallets and blue industrial storage bins stored together in a warehouse',
+    highlightsTitle: 'Key Features',
     highlights: [
       'Metal pallets: heavy-duty steel with 2-way and 4-way forklift access',
-      'High load capacity for industrial applications',
-      'Plastic pallets: lightweight, hygienic option for food & pharma',
-      'Corrosion-resistant and easy to clean',
+      'High load capacity for heavy industrial unit loads',
+      'Stackable metal bins that help optimize storage space',
+      'Packing workstations with dedicated space for packing tasks',
+      'Durable powder coating for a corrosion-resistant finish',
     ],
     applications: [
       'Heavy industrial unit loads',
-      'Food and pharmaceutical hygiene zones',
-      'Export and one-way shipments',
-      'Rack-compatible palletised storage',
+      'Picking and packing zones',
+      'Spare-parts and component storage',
+      'Dispatch and e-commerce packing benches',
     ],
     icon: 'package',
-    seoTitle: 'Metal & Plastic Pallets | Industrial Pallet Solutions',
+    seoTitle: 'Metal Pallet and Metal Bins | Steel Pallets, Bins & Workstations',
     seoDescription:
-      'Steel metal pallets with 2-way/4-way access and hygienic plastic pallets for food and pharma — corrosion-resistant, easy-clean industrial pallet solutions.',
+      'Heavy-duty metal pallets, stackable metal storage bins and packing workstations with 2-way/4-way forklift access and corrosion-resistant powder-coated steel construction.',
   },
 ]
 
@@ -383,7 +402,7 @@ export const productCategories: { name: ProductCategory; blurb: string }[] = [
   },
   {
     name: 'Decking & Pallets',
-    blurb: 'Wire mesh decking, metal and plastic pallets to complete the rack.',
+    blurb: 'Wire mesh decking, metal pallets, bins and packing workstations.',
   },
 ]
 

@@ -2,7 +2,7 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, BadgeCheck, Phone } from 'lucide-react'
 import { ClipFrame } from '@/components/marketing/clip-frame'
 import { CtaBand } from '@/components/marketing/cta-band'
-import { DotGrid } from '@/components/marketing/dot-grid'
+import { HeroCarousel } from '@/components/marketing/hero-carousel'
 import { ProductCard } from '@/components/marketing/product-card'
 import { SectionHeading } from '@/components/marketing/section-heading'
 import { buttonVariants } from '@/components/ui/button'
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/')({
         'Global Racks Storage Systems manufactures heavy duty pallet racking, cantilever racks, drive-in and radio shuttle systems, mezzanine floors, material handling equipment and custom fabrication for warehouses across India.',
       path: '/',
       image: '/images/warehouse-hero.jpg',
-      imageAlt: 'Aerial view of a warehouse filled with Global Racks pallet racking',
+      imageAlt: 'Forklift operating in a drive-in racking aisle at a Global Racks warehouse',
     }),
   component: Home,
 })
@@ -29,14 +29,9 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-950">
-        <DotGrid tone="white" className="absolute top-12 left-8 hidden lg:grid" />
-        <span
-          aria-hidden="true"
-          className="absolute -top-24 -right-24 size-96 rounded-full bg-brand-500/15 blur-3xl"
-        />
-        <div className="wrap relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
-          <div>
+      <section>
+        <HeroCarousel className="lg:min-h-[calc(100svh-6.5rem)]">
+          <div className="max-w-2xl">
             <p className="eyebrow text-brand-300">
               <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" />
               {site.positioning}
@@ -66,7 +61,7 @@ function Home() {
                 {site.contact.phoneDisplay}
               </a>
             </div>
-            <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="border-l-2 border-brand-500 pl-4">
                   <dt className="order-2 text-xs font-medium tracking-wide text-navy-200 uppercase">
@@ -79,27 +74,18 @@ function Home() {
                 </div>
               ))}
             </dl>
-          </div>
-          <div className="relative">
-            <ClipFrame
-              src="/images/warehouse-hero.jpg"
-              alt="Aerial view of a distribution warehouse filled with Global Racks pallet racking"
-              priority
-              className="mx-auto max-w-xl"
-              imgClassName="aspect-16/10"
-            />
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+            <div className="mt-8 hidden flex-wrap gap-3 sm:flex">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/40 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-brand-400" />
                 Quality fabrication
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/40 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-brand-400" />
                 Custom solutions since {site.founded}
               </span>
             </div>
           </div>
-        </div>
+        </HeroCarousel>
       </section>
       {/* Featured products */}
       <section className="bg-steel-50 py-16 sm:py-24">
@@ -178,7 +164,7 @@ function Home() {
         </div>
       </section>
       {/* Industries + adjacent offerings */}
-      <section className="bg-navy-950 py-16 sm:py-24">
+      <section className="bg-navy-900 py-16 sm:py-24">
         <div className="wrap">
           <SectionHeading
             tone="light"
@@ -215,7 +201,7 @@ function Home() {
                 decoding="async"
                 className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
                 <p className="font-display text-xl font-bold text-white">
                   Material Handling Equipment
@@ -236,7 +222,7 @@ function Home() {
                 decoding="async"
                 className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
                 <p className="font-display text-xl font-bold text-white">
                   Fabrication &amp; Custom Metalwork

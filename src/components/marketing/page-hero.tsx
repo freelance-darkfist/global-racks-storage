@@ -26,7 +26,7 @@ export function PageHero({
   className?: string
 }) {
   return (
-    <section className={cn('relative overflow-hidden bg-navy-950', className)}>
+    <section className={cn('relative overflow-hidden bg-navy-900', className)}>
       <span
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-500 via-brand-400 to-transparent"
@@ -34,7 +34,7 @@ export function PageHero({
       <DotGrid tone="white" className="absolute top-10 right-10 hidden lg:grid" />
       <span
         aria-hidden="true"
-        className="absolute -right-24 -bottom-32 size-96 rotate-12 rounded-3xl bg-navy-800/60"
+        className="absolute -right-24 -bottom-32 size-96 rotate-12 rounded-3xl bg-navy-700/60"
       />
       <div className="wrap relative py-16 sm:py-20">
         {crumbs?.length ? (

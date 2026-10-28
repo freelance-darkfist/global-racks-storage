@@ -15,7 +15,7 @@ export function CtaBand({
   className?: string
 }) {
   return (
-    <section className={cn('relative overflow-hidden bg-navy-900', className)}>
+    <section className={cn('relative overflow-hidden bg-navy-800', className)}>
       <DotGrid tone="white" className="absolute -top-6 right-8 hidden md:grid" />
       <span
         aria-hidden="true"

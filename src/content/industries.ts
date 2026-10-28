@@ -24,7 +24,12 @@ export const industries: Industry[] = [
     description:
       'Raw material, WIP and finished-goods storage integrated with production flow and line feeding.',
     icon: 'factory',
-    solutions: ['heavy-duty-pallet-racking', 'cantilever-racks', 'gravity-flow-racks'],
+    solutions: [
+      'heavy-duty-pallet-racking',
+      'cantilever-racks',
+      'gravity-flow-racks',
+      'metal-pallets-and-metal-bins',
+    ],
   },
   {
     slug: 'retail-ecommerce',
@@ -32,7 +37,12 @@ export const industries: Industry[] = [
     description:
       'Case and piece picking with multitier pick faces, replenishment buffers and returns handling.',
     icon: 'shopping-cart',
-    solutions: ['multitier-shelving-racking', 'mezzanine-floor-systems', 'slotted-angle-racks'],
+    solutions: [
+      'multitier-shelving-racking',
+      'mezzanine-floor-systems',
+      'slotted-angle-racks',
+      'metal-pallets-and-metal-bins',
+    ],
   },
   {
     slug: 'pharmaceuticals',
@@ -40,7 +50,7 @@ export const industries: Industry[] = [
     description:
       'Batch-controlled, hygienic storage with FIFO discipline and cleanable surfaces.',
     icon: 'pill',
-    solutions: ['gravity-flow-racks', 'mobile-racking-system', 'metal-plastic-pallets'],
+    solutions: ['gravity-flow-racks', 'mobile-racking-system', 'metal-pallets-and-metal-bins'],
   },
   {
     slug: 'automotive',

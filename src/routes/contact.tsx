@@ -31,18 +31,22 @@ function Contact() {
 
       <section className="py-16 sm:py-24">
         <div className="wrap grid gap-10 lg:grid-cols-5">
-          <div className="space-y-4 lg:col-span-2">
+          <div className="min-w-0 space-y-4 lg:col-span-2">
             <ContactCard
               icon={<Phone className="size-5" />}
               title="Phone"
-              lines={[contact.phoneDisplay, contact.hours]}
-              href={contact.phoneHref}
+              lines={contact.phones.map((phone) => ({
+                text: phone.display,
+                href: phone.href,
+              }))}
             />
             <ContactCard
               icon={<Mail className="size-5" />}
               title="Email"
-              lines={[contact.emailDisplay, contact.salesEmailDisplay]}
-              href={contact.emailHref}
+              lines={[
+                { text: contact.emailDisplay, href: contact.emailHref },
+                { text: contact.salesEmailDisplay, href: contact.salesEmailHref },
+              ]}
             />
             <ContactCard
               icon={<MapPin className="size-5" />}
@@ -70,39 +74,52 @@ function Contact() {
   )
 }
 
+type ContactLine = string | { text: string; href: string }
+
 function ContactCard({
   icon,
   title,
   lines,
-  href,
 }: {
   icon: ReactNode
   title: string
-  lines: readonly string[]
-  href?: string
+  lines: readonly ContactLine[]
 }) {
   return (
     <article className="flex items-start gap-4 rounded-2xl border border-navy-900/10 bg-white p-5 shadow-card">
       <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-brand-400">
         {icon}
       </span>
-      <div>
+      <div className="min-w-0">
         <h2 className="font-display font-bold text-navy-950">{title}</h2>
-        {href ? (
-          <a
-            href={href}
-            className="mt-1 block text-sm font-semibold text-brand-600 hover:text-brand-700"
-          >
-            {lines[0]}
-          </a>
-        ) : (
-          <p className="mt-1 text-sm font-semibold text-steel-700">{lines[0]}</p>
-        )}
-        {lines.slice(1).map((line) => (
-          <p key={line} className="text-sm text-steel-600">
-            {line}
-          </p>
-        ))}
+        {lines.map((line, index) => {
+          const text = typeof line === 'string' ? line : line.text
+          // Object lines carry their own href, so every phone number and email
+          // is tappable and styled identically.
+          const lineHref = typeof line === 'string' ? undefined : line.href
+          const spacing = index === 0 ? 'mt-1' : 'mt-0.5'
+          if (lineHref) {
+            return (
+              <a
+                key={text}
+                href={lineHref}
+                className={`${spacing} block text-sm font-semibold text-brand-600 break-words hover:text-brand-700`}
+              >
+                {text}
+              </a>
+            )
+          }
+          return (
+            <p
+              key={text}
+              className={`${spacing} text-sm break-words ${
+                index === 0 ? 'font-semibold text-steel-700' : 'text-steel-600'
+              }`}
+            >
+              {text}
+            </p>
+          )
+        })}
       </div>
     </article>
   )

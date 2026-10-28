@@ -14,14 +14,23 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy-900/10 bg-white/95 backdrop-blur">
-      <div className="hidden bg-navy-950 text-navy-100 md:block">
+      <div className="hidden bg-navy-900 text-navy-100 md:block">
         <div className="wrap flex items-center justify-between py-1.5 text-xs">
           <p className="font-medium tracking-wide">{site.positioning}</p>
           <div className="flex items-center gap-5">
-            <a href={site.contact.phoneHref} className="transition-colors hover:text-brand-300">
-              {site.contact.phoneDisplay}
-            </a>
-            <a href={site.contact.emailHref} className="transition-colors hover:text-brand-300">
+            {site.contact.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="transition-colors hover:text-brand-300"
+              >
+                {phone.display}
+              </a>
+            ))}
+            <a
+              href={site.contact.emailHref}
+              className="hidden transition-colors hover:text-brand-300 lg:inline"
+            >
               {site.contact.emailDisplay}
             </a>
           </div>
@@ -191,13 +200,16 @@ export function Header() {
             >
               Get a Quote
             </Link>
-            <a
-              href={site.contact.phoneHref}
-              className="flex items-center justify-center gap-2 py-2 text-sm font-semibold text-navy-900"
-            >
-              <Phone className="size-4 text-brand-500" />
-              {site.contact.phoneDisplay}
-            </a>
+            {site.contact.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="flex items-center justify-center gap-2 py-1.5 text-sm font-semibold text-navy-900"
+              >
+                <Phone className="size-4 text-brand-500" />
+                {phone.display}
+              </a>
+            ))}
           </nav>
         </div>
       ) : null}
