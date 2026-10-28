@@ -16,47 +16,38 @@ type HeroCarouselProps = {
 
 /**
  * Full-bleed hero carousel — the featured storage systems fill the entire hero
- * behind the headline, with the slide caption and counter docked along the
+ * behind the headline, with the active slide's product caption docked along the
  * bottom edge.
  *
- * The carousel is deliberately button-free: slides advance on a timer and the
- * only visible status is the "01 / 04" counter. Hovering the hero, focusing
- * something inside it, a hidden tab or `prefers-reduced-motion` holds the
- * slideshow in place; arrow keys and touch swipes still move between slides.
+ * The carousel is deliberately button-free: slides advance on their own every
+ * `AUTOPLAY_MS`, and the rotation keeps running while the page is visible (there
+ * is no hover, focus or reduced-motion hold — the hero covers most of the
+ * viewport, so a pointer resting anywhere on it would otherwise stall the
+ * slideshow). Arrow keys and touch swipes still move between slides, and the
+ * slideshow only waits while the tab is hidden.
  */
 export function HeroCarousel({ children, className }: HeroCarouselProps) {
   const [index, setIndex] = useState(0)
-  const [hovered, setHovered] = useState(false)
-  const [focused, setFocused] = useState(false)
   const [tabHidden, setTabHidden] = useState(false)
-  const [reduceMotion, setReduceMotion] = useState(false)
   const touchStartX = useRef<number | null>(null)
 
   const count = heroSlides.length
   const current = heroSlides[index] ?? heroSlides[0]
-  const still = hovered || focused || tabHidden || reduceMotion
-
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const sync = () => setReduceMotion(query.matches)
-    sync()
-    query.addEventListener('change', sync)
-    return () => query.removeEventListener('change', sync)
-  }, [])
 
   useEffect(() => {
     const sync = () => setTabHidden(document.visibilityState === 'hidden')
+    sync()
     document.addEventListener('visibilitychange', sync)
     return () => document.removeEventListener('visibilitychange', sync)
   }, [])
 
-  // Timer-driven autoplay: the countdown restarts whenever the slide changes or
-  // the hero starts holding (`still`), which is also how hover/focus pause.
+  // Timer-driven autoplay: each tick schedules the next advance, so a manual
+  // slide change (keyboard/swipe) restarts the dwell instead of double-stepping.
   useEffect(() => {
-    if (still) return
+    if (tabHidden) return
     const timer = window.setTimeout(() => setIndex((i) => (i + 1) % count), AUTOPLAY_MS)
     return () => window.clearTimeout(timer)
-  }, [count, index, still])
+  }, [count, index, tabHidden])
 
   if (!current) return null
 
@@ -81,18 +72,6 @@ export function HeroCarousel({ children, className }: HeroCarouselProps) {
         'relative isolate flex min-h-[30rem] flex-col overflow-hidden bg-navy-950',
         className,
       )}
-      onPointerEnter={(event) => {
-        if (event.pointerType === 'mouse') setHovered(true)
-      }}
-      onPointerLeave={(event) => {
-        if (event.pointerType === 'mouse') setHovered(false)
-      }}
-      onFocus={() => setFocused(true)}
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-          setFocused(false)
-        }
-      }}
       onKeyDown={handleKeyDown}
       onTouchStart={(event) => {
         touchStartX.current = event.touches[0]?.clientX ?? null
@@ -138,7 +117,7 @@ export function HeroCarousel({ children, className }: HeroCarouselProps) {
         <span aria-hidden="true" className="absolute inset-0 bg-navy-950/75 lg:hidden" />
         <span
           aria-hidden="true"
-          className="absolute inset-0 hidden bg-gradient-to-r from-navy-950 from-10% via-navy-950/90 via-60% to-navy-950/15 lg:block"
+          className="absolute inset-0 hidden bg-gradient-to-r from-navy-950/90 from-10% via-navy-950/80 via-60% to-navy-950/15 lg:block"
         />
         <span
           aria-hidden="true"
@@ -149,11 +128,11 @@ export function HeroCarousel({ children, className }: HeroCarouselProps) {
       <div className="wrap relative flex flex-1 flex-col pt-12 pb-8 sm:pt-14 lg:pt-14 lg:pb-8">
         <div className="flex-1">{children}</div>
 
-        <div className="mt-9 flex items-center justify-between gap-4 border-t border-white/20 pt-5 sm:mt-10 sm:gap-8">
+        <div className="mt-9 border-t border-white/20 pt-5 sm:mt-10">
           <Link
             to="/products/$slug"
             params={{ slug: current.slug }}
-            className="group flex min-w-0 items-center gap-3 rounded-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-300"
+            className="group inline-flex min-w-0 items-center gap-3 rounded-sm text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-300"
           >
             <span className="eyebrow shrink-0 text-brand-300">{current.eyebrow}</span>
             <span className="hidden min-w-0 truncate text-sm font-medium text-white/70 transition-colors group-hover:text-white md:inline">
@@ -164,14 +143,9 @@ export function HeroCarousel({ children, className }: HeroCarouselProps) {
               className="size-4 shrink-0 text-brand-400 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none"
             />
           </Link>
-
-          <span className="shrink-0 font-display text-xs font-bold tracking-[0.18em] text-white/60 tabular-nums">
-            {String(index + 1).padStart(2, '0')}
-            <span className="text-white/30"> / {String(count).padStart(2, '0')}</span>
-          </span>
         </div>
       </div>
-      <span aria-live={still ? 'polite' : 'off'} aria-atomic="true" className="sr-only">
+      <span aria-live="off" aria-atomic="true" className="sr-only">
         Slide {index + 1} of {count}: {current.eyebrow}
       </span>
     </div>
