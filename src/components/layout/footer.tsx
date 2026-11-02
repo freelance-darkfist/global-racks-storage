@@ -18,12 +18,15 @@ export function Footer() {
               className="h-12 w-auto rounded-md bg-white object-contain p-1"
             />
           </Link>
-          <p className="mt-4 text-sm leading-relaxed text-navy-200">{site.description}</p>
+          <p className="mt-3 text-sm font-bold tracking-[0.2em] text-white uppercase">
+            {site.tagline}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-navy-200">{site.description}</p>
           <p className="mt-4 text-xs font-semibold tracking-[0.14em] text-brand-300 uppercase">
             {site.positioning}
           </p>
           <p className="mt-4 text-xs text-navy-300">
-            <span className="font-semibold text-navy-200">Certified:</span>{' '}
+            <span className="font-semibold text-navy-200">Certifications:</span>{' '}
             {certifications.map((certification) => certification.code).join(' · ')}
           </p>
         </div>

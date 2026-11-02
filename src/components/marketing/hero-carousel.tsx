@@ -6,7 +6,7 @@ import { heroSlides } from '@/content/hero'
 import { cn } from '@/lib/utils'
 
 /** Autoplay dwell for each slide, in milliseconds. */
-const AUTOPLAY_MS = 6500
+const AUTOPLAY_MS = 3000
 
 type HeroCarouselProps = {
   /** Hero copy laid over the full-bleed slides. */

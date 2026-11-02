@@ -5,7 +5,7 @@ import { CtaBand } from '@/components/marketing/cta-band'
 import { JsonLd } from '@/components/marketing/json-ld'
 import { PageHero } from '@/components/marketing/page-hero'
 import { SectionHeading } from '@/components/marketing/section-heading'
-import { certifications, site } from '@/content/site'
+import { certifications } from '@/content/site'
 import { breadcrumbLd, seoMeta } from '@/lib/seo'
 
 const values = [
@@ -59,7 +59,7 @@ export const Route = createFileRoute('/about')({
     seoMeta({
       title: `About Global Racks Storage Systems | Rack Manufacturer India`,
       description:
-        'Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication and installation of high-quality storage and racking solutions since 2024.',
+        'Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication and installation of high-quality storage and racking solutions.',
       path: '/about',
       image: '/images/about-warehouse.jpg',
       imageAlt: 'Warehouse aisle with Global Racks pallet racking',
@@ -100,12 +100,12 @@ function About() {
               client receives storage systems tailored to their unique operational
               requirements.
             </p>
-            <dl className="mt-8 grid grid-cols-2 gap-6">
+            {/* <dl className="mt-8 grid grid-cols-2 gap-6">
               <div className="rounded-2xl bg-navy-900 p-5 text-white">
                 <dt className="text-xs font-semibold tracking-[0.14em] text-brand-300 uppercase">
-                  Established
+                  Certified to
                 </dt>
-                <dd className="mt-1 font-display text-3xl font-extrabold">{site.founded}</dd>
+                <dd className="mt-1 font-display text-2xl font-extrabold">ISO 9001:2015</dd>
               </div>
               <div className="rounded-2xl bg-brand-500 p-5 text-white">
                 <dt className="text-xs font-semibold tracking-[0.14em] text-white/80 uppercase">
@@ -113,7 +113,7 @@ function About() {
                 </dt>
                 <dd className="mt-1 font-display text-3xl font-extrabold">11</dd>
               </div>
-            </dl>
+            </dl> */}
           </div>
         </div>
       </section>
@@ -142,22 +142,19 @@ function About() {
           <SectionHeading
             align="center"
             eyebrow="Certifications"
-            title="Certified to international standards"
-            lead="Our racking systems are designed, fabricated and load-tested against recognised quality, environmental and structural standards."
+            title="Certifications and quality approvals"
+            lead="Global Racks Storage Systems is committed to quality, environmental responsibility and formal business compliance. Our systems are designed, fabricated and load-tested against the standards below."
           />
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((certification) => (
               <li
                 key={certification.code}
-                className="rounded-2xl border border-navy-900/10 bg-white p-6 shadow-card"
+                className="rounded-2xl border border-navy-900/10 bg-white p-8 text-center shadow-card"
               >
-                <BadgeCheck aria-hidden="true" className="size-8 text-brand-500" />
-                <p className="mt-4 font-display text-lg font-bold text-navy-950">
+                <h3 className="font-display text-lg font-bold text-navy-950">
                   {certification.code}
-                </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-steel-600">
-                  {certification.label}
-                </p>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-steel-600">{certification.label}</p>
               </li>
             ))}
           </ul>

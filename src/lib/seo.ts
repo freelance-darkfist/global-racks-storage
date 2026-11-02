@@ -45,7 +45,6 @@ export function organizationLd(): Json {
     alternateName: [site.name, site.shortName],
     url: site.url,
     logo: `${site.url}/images/logo.jpg`,
-    foundingDate: site.founded,
     slogan: site.tagline,
     description: site.description,
     contactPoint: site.contact.phones.map((phone, index) => ({
@@ -125,7 +124,6 @@ export function localBusinessLd(): Json {
     url: site.url,
     telephone: site.contact.phones.map((phone) => phone.display),
     email: site.contact.emailDisplay,
-    foundingDate: site.founded,
     priceRange: 'INR',
     openingHours: 'Mo-Sa 09:00-19:00',
   }

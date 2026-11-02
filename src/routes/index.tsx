@@ -61,7 +61,7 @@ function Home() {
                 {site.contact.phoneDisplay}
               </a>
             </div>
-            <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
+            <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-3">
               {stats.map((stat) => (
                 <div key={stat.label} className="border-l-2 border-brand-500 pl-4">
                   <dt className="order-2 text-xs font-medium tracking-wide text-navy-200 uppercase">
@@ -81,7 +81,7 @@ function Home() {
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/40 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-brand-400" />
-                Custom solutions since {site.founded}
+                ISO 9001:2015 certified
               </span>
             </div>
           </div>
@@ -121,7 +121,7 @@ function Home() {
           <div>
             <SectionHeading
               eyebrow="Why Global Racks"
-              title="Quality fabrication. Custom solutions. Since 2024."
+              title="Quality fabrication and custom solutions"
               lead="Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication, and installation of high-quality storage and racking solutions."
             />
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -189,28 +189,7 @@ function Home() {
               </Link>
             ))}
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <Link
-              to="/material-handling"
-              className="group relative overflow-hidden rounded-2xl border border-white/10"
-            >
-              <img
-                src="/images/material-handling/reach-truck.jpg"
-                alt="Operator working a reach truck beside pallet racking"
-                loading="lazy"
-                decoding="async"
-                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <p className="font-display text-xl font-bold text-white">
-                  Material Handling Equipment
-                </p>
-                <p className="mt-1 text-sm text-navy-100">
-                  Pallet trucks, stackers, walkies and forklifts.
-                </p>
-              </div>
-            </Link>
+          {/* <div className="mt-12 grid gap-6">
             <Link
               to="/fabrication"
               className="group relative overflow-hidden rounded-2xl border border-white/10"
@@ -220,7 +199,7 @@ function Home() {
                 alt="Fabricators welding steel in the Global Racks workshop"
                 loading="lazy"
                 decoding="async"
-                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:aspect-21/9"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
@@ -232,7 +211,7 @@ function Home() {
                 </p>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -11,10 +11,11 @@ export const site = {
   legalName: 'Global Racks Storage Systems Private Limited',
   shortName: 'Global Racks',
   url: 'https://globalracksstorage.com',
-  tagline: 'Professional Industrial Storage Solutions',
+  tagline: 'Plan | Store | Grow',
   /** Fastest growing storage racking company in India (per brand positioning). */
   positioning: 'Fastest Growing Storage Racking Company in India',
-  founded: '2024',
+  /** Certification line shown in the top bar, as on the About page. */
+  certifiedStatement: 'An ISO 9001:2015 and ISO 14001:2015 Certified Company',
   description:
     'Global Racks Storage Systems Pvt. Ltd. designs, fabricates and installs industrial storage racking, mezzanine floors, material handling equipment and custom metalwork for warehouses across India.',
   contact: {
@@ -46,7 +47,6 @@ export type Site = typeof site
 export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Products', to: '/products' },
-  { label: 'Material Handling', to: '/material-handling' },
   { label: 'Fabrication', to: '/fabrication' },
   { label: 'Industries', to: '/industries' },
   { label: 'About', to: '/about' },
@@ -54,17 +54,22 @@ export const navLinks = [
 
 /**
  * Certifications and standards shown on the About page and in the footer.
- * Keep `code` short, it is the prominent line on each badge.
+ * Keep `code` short, it is the prominent line on each card.
  */
 export const certifications = [
-  { code: 'ISO 9001:2015', label: 'Quality management system' },
-  { code: 'ISO 14001:2015', label: 'Environmental management system' },
-  { code: 'BIFMA', label: 'Business and institutional furniture standards' },
-  { code: 'EN 15512', label: 'European standard for steel static storage systems' },
+  {
+    code: 'ISO 9001:2015',
+    label:
+      'Quality management system certification covering our design, fabrication and delivery processes.',
+  },
+  {
+    code: 'ISO 14001:2015',
+    label: 'Environmental management system certification reflecting responsible manufacturing.',
+  },
+  { code: 'EN 15512', label: 'European design standard for steel static storage systems.' },
 ] as const
 
 export const stats = [
-  { value: '2024', label: 'Established', suffix: '' },
   { value: '11', label: 'Racking system types', suffix: '+' },
   { value: '75', label: 'Warehouse space utilisation', suffix: '%' },
   { value: '4000', label: 'Kg per beam level', suffix: 'kg' },

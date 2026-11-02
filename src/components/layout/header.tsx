@@ -1,5 +1,5 @@
 import { Link, useRouterState } from '@tanstack/react-router'
-import { ChevronDown, Menu, Phone, X } from 'lucide-react'
+import { BadgeCheck, ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { useState } from 'react'
 import { buttonVariants } from '@/components/ui/button'
 import { productCategories, products } from '@/content/products'
@@ -16,7 +16,10 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-navy-900/10 bg-white/95 backdrop-blur">
       <div className="hidden bg-navy-900 text-navy-100 md:block">
         <div className="wrap flex items-center justify-between py-1.5 text-xs">
-          <p className="font-medium tracking-wide">{site.positioning}</p>
+          <p className="flex items-center gap-2 font-medium tracking-wide">
+            <BadgeCheck aria-hidden="true" className="size-3.5 text-brand-400" />
+            {site.certifiedStatement}
+          </p>
           <div className="flex items-center gap-5">
             {site.contact.phones.map((phone) => (
               <a

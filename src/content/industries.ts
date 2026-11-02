@@ -7,14 +7,14 @@ export type Industry = {
 }
 
 export const industriesIntro =
-  'Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication, and installation of high-quality storage and racking solutions. We manufacture a wide range of industrial racks and warehouse storage systems tailored to meet the needs of industries such as logistics, manufacturing, retail, pharmaceuticals, automotive, and more.'
+  'Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication, and installation of high quality storage and racking solutions. We manufacture a wide range of industrial racks and warehouse storage systems tailored to meet the needs of industries such as logistics, manufacturing, retail, pharmaceuticals, automotive, and more.'
 
 export const industries: Industry[] = [
   {
     slug: 'logistics-3pl',
     name: 'Logistics and 3PL',
     description:
-      'High-turnover distribution centres needing flexible beam levels and fast reconfiguration between clients.',
+      'High turnover distribution centres needing flexible beam levels and fast reconfiguration between clients.',
     icon: 'truck',
     solutions: ['heavy-duty-pallet-racking', 'mezzanine-floor-systems', 'radio-shuttle-system'],
   },
@@ -22,7 +22,7 @@ export const industries: Industry[] = [
     slug: 'manufacturing',
     name: 'Manufacturing',
     description:
-      'Raw material, WIP and finished-goods storage integrated with production flow and line feeding.',
+      'Raw material, WIP and finished goods storage integrated with production flow and line feeding.',
     icon: 'factory',
     solutions: [
       'heavy-duty-pallet-racking',
@@ -48,7 +48,7 @@ export const industries: Industry[] = [
     slug: 'pharmaceuticals',
     name: 'Pharmaceuticals',
     description:
-      'Batch-controlled, hygienic storage with FIFO discipline and cleanable surfaces.',
+      'Batch controlled, hygienic storage with FIFO discipline and cleanable surfaces.',
     icon: 'pill',
     solutions: ['gravity-flow-racks', 'mobile-racking-system', 'metal-pallets-and-metal-bins'],
   },
@@ -56,7 +56,7 @@ export const industries: Industry[] = [
     slug: 'automotive',
     name: 'Automotive',
     description:
-      'Long, heavy and irregular components such as axles, extrusions and panels, stored damage-free.',
+      'Long, heavy and irregular components such as axles, extrusions and panels, stored damage free.',
     icon: 'car',
     solutions: ['cantilever-racks', 'heavy-duty-pallet-racking', 'mobile-racking-system'],
   },

@@ -20,7 +20,7 @@ export const Route = createFileRoute('/fabrication')({
     seoMeta({
       title: `Fabrication Work and Custom Metal Solutions | ${site.name}`,
       description:
-        'Custom metal fabrication: structural steel work, warehouse infrastructure, pre-engineered metal buildings, rack-supported warehouses, welding, metal forming and bespoke storage solutions.',
+        'Custom metal fabrication: structural steel work, warehouse infrastructure, pre-engineered metal buildings, rack-supported warehouses, welding, metal forming, metal pallets, metal bins and bespoke storage solutions.',
       path: '/fabrication',
       image: fabricationImages.welding.src,
       imageAlt: fabricationImages.welding.alt,
