@@ -47,7 +47,7 @@ function ProductsIndex() {
       </div>
       <CtaBand
         title="Not sure which system fits your warehouse?"
-        lead="Send us your layout, load sizes and throughput — we'll recommend the right racking family and configuration, free of charge."
+        lead="Send us your layout, load sizes and throughput, and we'll recommend the right racking family and configuration, free of charge."
       />
       <JsonLd
         data={[

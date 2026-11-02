@@ -2,7 +2,7 @@
  * Central site configuration for Global Racks Storage Systems.
  *
  * NOTE(client): the `contact` block below still contains PLACEHOLDER address
- * and working-hours values — replace them with the real company details
+ * and working-hours values, replace them with the real company details
  * before going live. Everything on the site reads from this single module,
  * so one edit updates header, footer, contact page, JSON-LD and the sitemap.
  */
@@ -34,7 +34,7 @@ export const site = {
     salesEmailHref: 'mailto:sales@globalracksstorage.com',
     addressLines: [
       'Global Racks Storage Systems Pvt. Ltd.',
-      'Warehouse & Works: Industrial Area',
+      'Warehouse and Works: Industrial Area',
       'India',
     ],
     hours: 'Monday – Saturday, 9:00 AM – 7:00 PM IST',
@@ -54,12 +54,12 @@ export const navLinks = [
 
 /**
  * Certifications and standards shown on the About page and in the footer.
- * Keep `code` short — it is the prominent line on each badge.
+ * Keep `code` short, it is the prominent line on each badge.
  */
 export const certifications = [
   { code: 'ISO 9001:2015', label: 'Quality management system' },
   { code: 'ISO 14001:2015', label: 'Environmental management system' },
-  { code: 'BIFMA', label: 'Business & institutional furniture standards' },
+  { code: 'BIFMA', label: 'Business and institutional furniture standards' },
   { code: 'EN 15512', label: 'European standard for steel static storage systems' },
 ] as const
 

@@ -17,7 +17,7 @@ const values = [
   {
     icon: Compass,
     title: 'Innovation',
-    text: 'Modern high-density systems — radio shuttle, mobile and gravity flow — alongside proven racking.',
+    text: 'Modern high-density systems such as radio shuttle, mobile and gravity flow, alongside proven racking.',
   },
   {
     icon: Wrench,
@@ -34,7 +34,7 @@ const values = [
 const process = [
   {
     step: '01',
-    title: 'Survey & design',
+    title: 'Survey and design',
     text: 'Site measurement, load analysis and layout options with loading plans.',
   },
   {
@@ -49,7 +49,7 @@ const process = [
   },
   {
     step: '04',
-    title: 'Support & expansion',
+    title: 'Support and expansion',
     text: 'Inspections, reconfigurations and extensions as your operation grows.',
   },
 ]

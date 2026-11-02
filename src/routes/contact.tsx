@@ -10,9 +10,9 @@ import { breadcrumbLd, seoMeta } from '@/lib/seo'
 export const Route = createFileRoute('/contact')({
   head: () =>
     seoMeta({
-      title: `Contact & Enquiry | ${site.name}`,
+      title: `Contact and Enquiry | ${site.name}`,
       description:
-        'Contact Global Racks Storage Systems for racking quotations, warehouse surveys and custom fabrication enquiries. Call, WhatsApp or send the enquiry form — we respond within one working day.',
+        'Contact Global Racks Storage Systems for racking quotations, warehouse surveys and custom fabrication enquiries. Call, WhatsApp or send the enquiry form. We respond within one working day.',
       path: '/contact',
     }),
   component: Contact,
@@ -25,7 +25,7 @@ function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Let's plan your warehouse"
-        lead="Send an enquiry or call us directly — our team responds within one working day with next steps, site-visit slots or a preliminary layout."
+        lead="Send an enquiry or call us directly. Our team responds within one working day with next steps, site-visit slots or a preliminary layout."
         crumbs={[{ name: 'Home', path: '/' }, { name: 'Contact' }]}
       />
 
@@ -50,7 +50,7 @@ function Contact() {
             />
             <ContactCard
               icon={<MapPin className="size-5" />}
-              title="Office & Works"
+              title="Office and Works"
               lines={contact.addressLines}
             />
             <ContactCard

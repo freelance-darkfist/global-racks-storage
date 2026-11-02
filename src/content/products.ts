@@ -1,9 +1,9 @@
 export type ProductCategory =
   | 'Pallet Racking'
-  | 'Shelving & Light Duty'
+  | 'Shelving and Light Duty'
   | 'High-Density Systems'
-  | 'Platforms & Floors'
-  | 'Decking & Pallets'
+  | 'Platforms and Floors'
+  | 'Decking and Pallets'
 
 export type Product = {
   slug: string
@@ -22,7 +22,7 @@ export type Product = {
   /** Heading for the highlight list, e.g. "Key Features". */
   highlightsTitle: string
   highlights: string[]
-  /** Typical applications — used on detail pages and JSON-LD. */
+  /** Typical applications, used on detail pages and JSON-LD. */
   applications: string[]
   /** Lucide icon key (see components/marketing/product-icon.tsx). */
   icon: string
@@ -50,7 +50,7 @@ export const products: Product[] = [
       'Beam Lengths: 1.8m - 3.6m standard options',
     ],
     applications: [
-      'Distribution & logistics warehouses',
+      'Distribution and logistics warehouses',
       'Manufacturing raw-material and FG stores',
       'Retail and e-commerce fulfilment centres',
       'Cold storage with galvanised finishes',
@@ -64,11 +64,11 @@ export const products: Product[] = [
     slug: 'multitier-shelving-racking',
     name: 'Multitier Shelving Racking',
     menuLabel: 'Multitier Shelving',
-    category: 'Shelving & Light Duty',
+    category: 'Shelving and Light Duty',
     tagline:
-      'Configurable multi-level shelving that turns vertical space into pick & pack capacity.',
+      'Configurable multi-level shelving that turns vertical space into pick and pack capacity.',
     description:
-      'Maximize your warehouse vertical space with our configurable multitier shelving systems. Ideal for small parts storage, pick & pack operations, and high-density inventory management.',
+      'Maximize your warehouse vertical space with our configurable multitier shelving systems. Ideal for small parts storage, pick and pack operations, and high-density inventory management.',
     image: '/images/products/multitier-shelving.jpg',
     imageAlt:
       'Multitier shelving racking with steel staircases and multiple picking levels in a warehouse',
@@ -79,7 +79,7 @@ export const products: Product[] = [
       'Modular design allows easy expansion and reconfiguration',
     ],
     applications: [
-      'E-commerce pick & pack mezzanines',
+      'E-commerce pick and pack mezzanines',
       'Small parts and spare-parts stores',
       'Pharma and FMCG case-picking operations',
       'Retail back-of-house storage',
@@ -87,7 +87,7 @@ export const products: Product[] = [
     icon: 'layers',
     seoTitle: 'Multitier Shelving Racking Systems | Multi-Level Storage',
     seoDescription:
-      'Multitier shelving racking with adjustable levels, handrails and anti-slip flooring for small parts storage and high-density pick & pack operations.',
+      'Multitier shelving racking with adjustable levels, handrails and anti-slip flooring for small parts storage and high-density pick and pack operations.',
   },
   {
     slug: 'cantilever-racks',
@@ -95,7 +95,7 @@ export const products: Product[] = [
     menuLabel: 'Cantilever Racks',
     category: 'Pallet Racking',
     tagline:
-      'Adjustable arms for long, bulky and irregular loads — pipes, lumber, sheets and more.',
+      'Adjustable arms for long, bulky and irregular loads such as pipes, lumber, sheets and more.',
     description:
       'Purpose-built for storing long, bulky, and irregularly shaped items. Cantilever racks feature adjustable arms that provide flexibility for various load sizes and configurations.',
     image: '/images/products/cantilever-racks.jpg',
@@ -114,7 +114,7 @@ export const products: Product[] = [
       'Furniture and white-goods manufacturing',
     ],
     icon: 'move-horizontal',
-    seoTitle: 'Cantilever Racks for Pipes, Lumber & Long Loads',
+    seoTitle: 'Cantilever Racks for Pipes, Lumber and Long Loads',
     seoDescription:
       'Single or double-sided cantilever racks with adjustable arms for pipes, lumber, metal sheets and other long, bulky items. Heavy-duty construction, made in India.',
   },
@@ -137,7 +137,7 @@ export const products: Product[] = [
       'Enhanced safety and operational efficiency',
     ],
     applications: [
-      'Food & beverage bulk stores',
+      'Food and beverage bulk stores',
       'Cold rooms and chillers',
       'Seasonal homogeneous inventory',
       'FMCG buffer warehouses',
@@ -151,7 +151,7 @@ export const products: Product[] = [
     slug: 'mezzanine-floor-systems',
     name: 'Mezzanine Floor Systems',
     menuLabel: 'Mezzanine Floors',
-    category: 'Platforms & Floors',
+    category: 'Platforms and Floors',
     tagline:
       'Steel platforms that multiply floor space without costly building expansion.',
     description:
@@ -231,7 +231,7 @@ export const products: Product[] = [
     highlightsTitle: 'Key Features',
     highlights: [
       'Electrically driven trolley-mounted racks on guided rails',
-      'Aisles open only when needed — every other lane stores product',
+      'Aisles open only when needed, so every other lane stores product',
       'Ideal for cold storage and high-value inventory management',
       'Maximizes storage capacity while maintaining direct access',
     ],
@@ -244,13 +244,13 @@ export const products: Product[] = [
     icon: 'move-3d',
     seoTitle: 'Mobile Racking Systems | Aisle-Eliminating Storage',
     seoDescription:
-      'Electrically driven mobile racking on rails eliminates fixed aisles for maximum floor utilisation — ideal for cold storage and high-value inventory.',
+      'Electrically driven mobile racking on rails eliminates fixed aisles for maximum floor utilisation, ideal for cold storage and high-value inventory.',
   },
   {
     slug: 'slotted-angle-racks',
     name: 'Slotted Angle Racks',
     menuLabel: 'Slotted Angle Racks',
-    category: 'Shelving & Light Duty',
+    category: 'Shelving and Light Duty',
     tagline:
       'Versatile bolt-free shelving for warehouses, workshops and retail backrooms.',
     description:
@@ -279,7 +279,7 @@ export const products: Product[] = [
     icon: 'frame',
     seoTitle: 'Slotted Angle Racks | Bolt-Free Modular Shelving',
     seoDescription:
-      'Slotted angle racks with bolt-free assembly and adjustable shelves — versatile, portable storage for warehouses, workshops and retail environments.',
+      'Slotted angle racks with bolt-free assembly and adjustable shelves for versatile, portable storage in warehouses, workshops and retail environments.',
   },
   {
     slug: 'gravity-flow-racks',
@@ -320,7 +320,7 @@ export const products: Product[] = [
     slug: 'wire-mesh-decking',
     name: 'Wire Mesh Decking',
     menuLabel: 'Wire Mesh Decking',
-    category: 'Decking & Pallets',
+    category: 'Decking and Pallets',
     tagline:
       'Heavy-duty mesh panels (300–1000 kg per deck) that improve rack safety and visibility.',
     description:
@@ -348,8 +348,8 @@ export const products: Product[] = [
   {
     slug: 'metal-pallets-and-metal-bins',
     name: 'Metal Pallet and Metal Bins',
-    menuLabel: 'Metal Pallets & Bins',
-    category: 'Decking & Pallets',
+    menuLabel: 'Metal Pallets and Bins',
+    category: 'Decking and Pallets',
     tagline:
       'Heavy-duty steel pallets, stackable metal bins and packing workstations for organised industrial storage.',
     description:
@@ -377,7 +377,7 @@ export const products: Product[] = [
       'Dispatch and e-commerce packing benches',
     ],
     icon: 'package',
-    seoTitle: 'Metal Pallet and Metal Bins | Steel Pallets, Bins & Workstations',
+    seoTitle: 'Metal Pallet and Metal Bins | Steel Pallets, Bins and Workstations',
     seoDescription:
       'Heavy-duty metal pallets, stackable metal storage bins and packing workstations with 2-way/4-way forklift access and corrosion-resistant powder-coated steel construction.',
   },
@@ -389,7 +389,7 @@ export const productCategories: { name: ProductCategory; blurb: string }[] = [
     blurb: 'Selective and cantilevered systems for palletised and long loads.',
   },
   {
-    name: 'Shelving & Light Duty',
+    name: 'Shelving and Light Duty',
     blurb: 'Multitier and slotted angle shelving for cases, cartons and parts.',
   },
   {
@@ -397,11 +397,11 @@ export const productCategories: { name: ProductCategory; blurb: string }[] = [
     blurb: 'Drive-in, radio shuttle, mobile and gravity flow for maximum cube.',
   },
   {
-    name: 'Platforms & Floors',
+    name: 'Platforms and Floors',
     blurb: 'Mezzanine floors and steel platforms that multiply usable area.',
   },
   {
-    name: 'Decking & Pallets',
+    name: 'Decking and Pallets',
     blurb: 'Wire mesh decking, metal pallets, bins and packing workstations.',
   },
 ]

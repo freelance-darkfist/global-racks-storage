@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-navy-900 text-navy-100">
       <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.name} — home`}>
+          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.name} home`}>
             <img
               src="/images/logo.jpg"
               alt=""
@@ -63,7 +63,7 @@ export function Footer() {
               ))}
             <li>
               <Link to="/contact" className="transition-colors hover:text-brand-300">
-                Contact &amp; Enquiry
+                Contact and Enquiry
               </Link>
             </li>
           </ul>

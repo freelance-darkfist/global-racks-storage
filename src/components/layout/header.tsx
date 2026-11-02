@@ -38,7 +38,7 @@ export function Header() {
       </div>
 
       <div className="wrap flex h-18 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} — home`}>
+        <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
           <img
             src="/images/logo.jpg"
             alt=""
@@ -111,7 +111,7 @@ export function Header() {
                         onClick={() => setProductsOpen(false)}
                         className="col-span-2 mt-1 rounded-xl bg-navy-50 px-4 py-2.5 text-center text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-100"
                       >
-                        View all products &amp; systems
+                        View all products and systems
                       </Link>
                     </div>
                   </div>

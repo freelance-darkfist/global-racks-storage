@@ -14,7 +14,7 @@ import { seoMeta } from '@/lib/seo'
 export const Route = createFileRoute('/')({
   head: () =>
     seoMeta({
-      title: `${site.name} | Industrial Racking, Mezzanine Floors & Warehouse Storage India`,
+      title: `${site.name} | Industrial Racking, Mezzanine Floors and Warehouse Storage India`,
       description:
         'Global Racks Storage Systems manufactures heavy duty pallet racking, cantilever racks, drive-in and radio shuttle systems, mezzanine floors, material handling equipment and custom fabrication for warehouses across India.',
       path: '/',
@@ -33,7 +33,7 @@ function Home() {
         <HeroCarousel className="lg:min-h-[calc(100svh-6.5rem)]">
           <div className="max-w-2xl">
             <p className="eyebrow text-brand-300">
-              <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" />
+              {/* <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" /> */}
               {site.positioning}
             </p>
             <h1 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
@@ -41,9 +41,9 @@ function Home() {
               <span className="text-brand-400">Storage Solutions</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-navy-100 sm:text-lg">
-              We design, fabricate and install high-quality storage and racking systems —
+              We design, fabricate and install high quality storage and racking systems,
               from heavy duty pallet racking to mezzanine floors, radio shuttle systems and
-              custom metalwork — tailored to your warehouse, your loads and your workflow.
+              custom metalworks, tailored to your warehouse, your loads and your workflow.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link to="/products" className={buttonVariants({ size: 'lg' })}>
@@ -94,7 +94,7 @@ function Home() {
             <SectionHeading
               eyebrow="Our product portfolio"
               title="Storage systems for every warehouse need"
-              lead="Pallet racks, cantilever, mezzanines, drive-in systems, mobile racks and more — eleven racking families engineered, fabricated and installed in-house."
+              lead="Pallet racks, cantilever, mezzanines, drive-in systems, mobile racks and more, with eleven racking families engineered, fabricated and installed in-house."
             />
             <Link to="/products" className={buttonVariants({ variant: 'outline' })}>
               View all 11 systems
@@ -136,7 +136,7 @@ function Home() {
                 },
                 {
                   title: 'Turnkey installation',
-                  text: 'Survey, design, supply, erection and handover — one team.',
+                  text: 'Survey, design, supply, erection and handover from one team.',
                 },
                 {
                   title: 'Every industry',
@@ -171,7 +171,7 @@ function Home() {
             align="center"
             eyebrow="Industries we serve"
             title="Built around your operation"
-            lead="From 3PL distribution to cold storage and automotive — we tailor racking geometry, finishes and accessories to each sector's realities."
+            lead="From 3PL distribution to cold storage and automotive, we tailor racking geometry, finishes and accessories to each sector's realities."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
@@ -225,7 +225,7 @@ function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
                 <p className="font-display text-xl font-bold text-white">
-                  Fabrication &amp; Custom Metalwork
+                  Fabrication and Custom Metalwork
                 </p>
                 <p className="mt-1 text-sm text-navy-100">
                   Structural steel, PEB buildings and bespoke storage.

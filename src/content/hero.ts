@@ -38,7 +38,7 @@ export const heroSlides: readonly HeroSlide[] = [
   {
     src: '/images/products/metal-pallets-and-metal-bins.jpg',
     alt: 'Steel pallets and blue industrial storage bins stored together in a warehouse',
-    eyebrow: 'Metal pallets & bins',
+    eyebrow: 'Metal pallets and bins',
     title: 'Rugged steel handling equipment built to last',
     slug: 'metal-pallets-and-metal-bins',
   },

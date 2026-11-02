@@ -17,9 +17,9 @@ import { breadcrumbLd, seoMeta } from '@/lib/seo'
 export const Route = createFileRoute('/material-handling')({
   head: () =>
     seoMeta({
-      title: `Material Handling Equipment | Pallet Trucks, Stackers & Forklifts | ${site.name}`,
+      title: `Material Handling Equipment | Pallet Trucks, Stackers and Forklifts | ${site.name}`,
       description:
-        'Hand and power pallet trucks, manual and semi-electric stackers, CB stackers, walkie pallet trucks and heavy-duty forklifts — reliable material handling equipment for Indian warehouses.',
+        'Hand and power pallet trucks, manual and semi-electric stackers, CB stackers, walkie pallet trucks and heavy-duty forklifts, a reliable range of material handling equipment for Indian warehouses.',
       path: '/material-handling',
       image: materialHandlingHeroImage.src,
       imageAlt: materialHandlingHeroImage.alt,

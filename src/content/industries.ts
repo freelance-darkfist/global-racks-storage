@@ -12,7 +12,7 @@ export const industriesIntro =
 export const industries: Industry[] = [
   {
     slug: 'logistics-3pl',
-    name: 'Logistics & 3PL',
+    name: 'Logistics and 3PL',
     description:
       'High-turnover distribution centres needing flexible beam levels and fast reconfiguration between clients.',
     icon: 'truck',
@@ -33,7 +33,7 @@ export const industries: Industry[] = [
   },
   {
     slug: 'retail-ecommerce',
-    name: 'Retail & E-commerce',
+    name: 'Retail and E-commerce',
     description:
       'Case and piece picking with multitier pick faces, replenishment buffers and returns handling.',
     icon: 'shopping-cart',
@@ -56,13 +56,13 @@ export const industries: Industry[] = [
     slug: 'automotive',
     name: 'Automotive',
     description:
-      'Long, heavy and irregular components — axles, extrusions, panels — stored damage-free.',
+      'Long, heavy and irregular components such as axles, extrusions and panels, stored damage-free.',
     icon: 'car',
     solutions: ['cantilever-racks', 'heavy-duty-pallet-racking', 'mobile-racking-system'],
   },
   {
     slug: 'food-beverage-cold-storage',
-    name: 'Food, Beverage & Cold Storage',
+    name: 'Food, Beverage and Cold Storage',
     description:
       'Maximum cube inside costly chilled and frozen chambers with strict FIFO rotation.',
     icon: 'snowflake',

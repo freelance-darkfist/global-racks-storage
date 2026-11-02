@@ -14,7 +14,7 @@ export const materialHandlingIntro =
 export const materialHandlingItems: MaterialHandlingItem[] = [
   {
     slug: 'pallet-trucks',
-    name: 'Hand Pallet Trucks & Power Pallet Trucks',
+    name: 'Hand Pallet Trucks and Power Pallet Trucks',
     description:
       'Dependable horizontal transport for palletised loads, from lightweight hand trucks for shop floors to powered trucks for long hauls across large warehouses.',
     points: [
@@ -29,7 +29,7 @@ export const materialHandlingItems: MaterialHandlingItem[] = [
   },
   {
     slug: 'stackers',
-    name: 'Manual & Semi-Electric Stackers',
+    name: 'Manual and Semi-Electric Stackers',
     description:
       'Compact stacking equipment that lifts pallets to racking and mezzanine heights without the footprint of a forklift.',
     points: [
@@ -41,7 +41,7 @@ export const materialHandlingItems: MaterialHandlingItem[] = [
   },
   {
     slug: 'cb-stackers-walkie-trucks',
-    name: 'CB Stackers & Walkie Pallet Trucks',
+    name: 'CB Stackers and Walkie Pallet Trucks',
     description:
       'Powered walk-behind equipment bridging the gap between manual trucks and ride-on forklifts for medium-duty cycles.',
     points: [

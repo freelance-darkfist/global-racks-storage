@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 
 export function CtaBand({
   title = 'Ready to optimise your warehouse space?',
-  lead = 'Share your layout and load requirements — our team will design, fabricate and install a storage system built around your operation.',
+  lead = 'Share your layout and load requirements. Our team will design, fabricate and install a storage system built around your operation.',
   className,
 }: {
   title?: string

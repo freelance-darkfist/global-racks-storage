@@ -15,13 +15,13 @@ type HeroCarouselProps = {
 }
 
 /**
- * Full-bleed hero carousel — the featured storage systems fill the entire hero
+ * Full-bleed hero carousel, the featured storage systems fill the entire hero
  * behind the headline, with the active slide's product caption docked along the
  * bottom edge.
  *
  * The carousel is deliberately button-free: slides advance on their own every
  * `AUTOPLAY_MS`, and the rotation keeps running while the page is visible (there
- * is no hover, focus or reduced-motion hold — the hero covers most of the
+ * is no hover, focus or reduced-motion hold, the hero covers most of the
  * viewport, so a pointer resting anywhere on it would otherwise stall the
  * slideshow). Arrow keys and touch swipes still move between slides, and the
  * slideshow only waits while the tab is hidden.
@@ -84,7 +84,7 @@ export function HeroCarousel({ children, className }: HeroCarouselProps) {
         if (Math.abs(delta) > 40) step(delta < 0 ? 1 : -1)
       }}
     >
-      {/* Slides + scrims — full-bleed background */}
+      {/* Slides + scrims, full-bleed background */}
       <div className="absolute inset-0">
         {heroSlides.map((slide, slideIndex) => {
           const isActive = slideIndex === index
