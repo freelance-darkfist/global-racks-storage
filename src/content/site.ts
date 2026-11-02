@@ -4,7 +4,9 @@
  * NOTE(client): the `contact` block below still contains PLACEHOLDER address
  * and working-hours values, replace them with the real company details
  * before going live. Everything on the site reads from this single module,
- * so one edit updates header, footer, contact page, JSON-LD and the sitemap.
+ * so one edit updates header, footer, contact page and JSON-LD. The `url`
+ * below is also the sitemap host in vite.config.ts, and the absolute sitemap
+ * line in public/robots.txt has to stay in step with it.
  */
 export const site = {
   name: 'Global Racks Storage Systems',

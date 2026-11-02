@@ -122,7 +122,7 @@ export function Footer() {
           </p>
           <p>
             <a
-              href={`${site.url}/sitemap.xml`}
+              href="/sitemap.xml"
               className="transition-colors hover:text-brand-300"
             >
               Sitemap
