@@ -58,7 +58,7 @@ export function PageHero({
           </nav>
         ) : null}
         <p className="eyebrow text-brand-300">
-          <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" />
+          {/* <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" /> */}
           {eyebrow}
         </p>
         <h1 className="mt-4 max-w-4xl font-display text-4xl font-extrabold tracking-tight text-balance text-white sm:text-5xl">

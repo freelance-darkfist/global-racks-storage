@@ -17,7 +17,7 @@ export const site = {
   /** Fastest growing storage racking company in India (per brand positioning). */
   positioning: 'Fastest Growing Storage Racking Company in India',
   /** Certification line shown in the top bar, as on the About page. */
-  certifiedStatement: 'An ISO 9001:2015 and ISO 14001:2015 Certified Company',
+  certifiedStatement: 'An ISO 9001:2015, ISO 14001:2015 and EN 15512 Certified Company',
   description:
     'Global Racks Storage Systems Pvt. Ltd. designs, fabricates and installs industrial storage racking, mezzanine floors, material handling equipment and custom metalwork for warehouses across India.',
   contact: {
