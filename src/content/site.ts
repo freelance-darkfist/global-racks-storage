@@ -49,6 +49,7 @@ export type Site = typeof site
 export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Products', to: '/products' },
+  { label: 'Manufacturing', to: '/manufacturing' },
   { label: 'Fabrication', to: '/fabrication' },
   { label: 'Industries', to: '/industries' },
   { label: 'About', to: '/about' },

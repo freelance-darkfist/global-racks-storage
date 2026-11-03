@@ -11,6 +11,7 @@
 import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as FabricationRouteImport } from './routes/fabrication'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -23,6 +24,11 @@ import { ServerRoute as ApiContactServerRouteImport } from './routes/api/contact
 
 const rootServerRouteImport = createServerRootRoute()
 
+const ManufacturingRoute = ManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products'
   fileRoutesByTo: FileRoutesByTo
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products'
   id:
@@ -123,6 +134,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -133,6 +145,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FabricationRoute: typeof FabricationRoute
   IndustriesRoute: typeof IndustriesRoute
+  ManufacturingRoute: typeof ManufacturingRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
@@ -164,6 +177,13 @@ export interface RootServerRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/manufacturing': {
+      id: '/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/manufacturing'
+      preLoaderRoute: typeof ManufacturingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FabricationRoute: FabricationRoute,
   IndustriesRoute: IndustriesRoute,
+  ManufacturingRoute: ManufacturingRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
