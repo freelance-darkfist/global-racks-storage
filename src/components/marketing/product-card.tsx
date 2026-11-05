@@ -37,9 +37,6 @@ export function ProductCard({
             />
           </div>
         )}
-        <span className="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold tracking-wide text-navy-900 uppercase shadow-xs">
-          {product.category}
-        </span>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <h3 className="font-display text-lg font-bold text-navy-950 group-hover:text-brand-600">

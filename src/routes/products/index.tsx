@@ -13,7 +13,7 @@ export const Route = createFileRoute('/products/')({
     seoMeta({
       title: `Industrial Storage Racking Systems (11 Types) | ${site.name}`,
       description:
-        'Browse all eleven Global Racks storage systems: heavy duty pallet racking, multitier shelving, cantilever, drive-in, mezzanine floors, radio shuttle, mobile racking, slotted angle, gravity flow, wire mesh decking and pallets.',
+        'Browse all eleven Global Racks storage systems: heavy duty pallet racking, multitier shelving, cantilever, drive-in, mezzanine floors, radio shuttle, mobile racking, slotted angle, gravity flow, wire mesh decking, metal pallets and metal bins.',
       path: '/products',
     }),
   component: ProductsIndex,
@@ -47,7 +47,7 @@ function ProductsIndex() {
       </div>
       <CtaBand
         title="Not sure which system fits your warehouse?"
-        lead="Send us your layout, load sizes and throughput — we'll recommend the right racking family and configuration, free of charge."
+        lead="Send us your layout, load sizes and throughput, and we'll recommend the right racking family and configuration, free of charge."
       />
       <JsonLd
         data={[

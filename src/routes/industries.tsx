@@ -13,7 +13,7 @@ export const Route = createFileRoute('/industries')({
     seoMeta({
       title: `Industries We Serve | Logistics, Manufacturing, Retail, Pharma, Automotive | ${site.name}`,
       description:
-        'Storage and racking solutions tailored for logistics & 3PL, manufacturing, retail & e-commerce, pharmaceuticals, automotive and food, beverage & cold storage industries across India.',
+        'Storage and racking solutions tailored for logistics and 3PL, manufacturing, retail and e-commerce, pharmaceuticals, automotive and food, beverage and cold storage industries across India.',
       path: '/industries',
     }),
   component: Industries,
@@ -72,7 +72,7 @@ function Industries() {
 
       <CtaBand
         title="Your industry, your loads, your constraints"
-        lead="Tell us what you store and how fast it moves — we'll design the racking around it."
+        lead="Tell us what you store and how fast it moves, and we'll design the racking around it."
       />
       <JsonLd
         data={breadcrumbLd([

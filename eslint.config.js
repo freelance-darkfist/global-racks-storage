@@ -6,6 +6,7 @@ export default tseslint.config(
     ignores: [
       'dist',
       '.output',
+      '.vercel',
       '.vinxi',
       '.nitro',
       '.tanstack',
@@ -23,6 +24,13 @@ export default tseslint.config(
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+    },
+  },
+  {
+    // Build tooling runs on Node, so allow the Node globals it needs.
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: { console: 'readonly', process: 'readonly' },
     },
   },
 )

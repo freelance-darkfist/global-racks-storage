@@ -2,7 +2,7 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, BadgeCheck, Phone } from 'lucide-react'
 import { ClipFrame } from '@/components/marketing/clip-frame'
 import { CtaBand } from '@/components/marketing/cta-band'
-import { DotGrid } from '@/components/marketing/dot-grid'
+import { HeroCarousel } from '@/components/marketing/hero-carousel'
 import { ProductCard } from '@/components/marketing/product-card'
 import { SectionHeading } from '@/components/marketing/section-heading'
 import { buttonVariants } from '@/components/ui/button'
@@ -14,12 +14,12 @@ import { seoMeta } from '@/lib/seo'
 export const Route = createFileRoute('/')({
   head: () =>
     seoMeta({
-      title: `${site.name} | Industrial Racking, Mezzanine Floors & Warehouse Storage India`,
+      title: `${site.name} | Industrial Racking, Mezzanine Floors and Warehouse Storage India`,
       description:
         'Global Racks Storage Systems manufactures heavy duty pallet racking, cantilever racks, drive-in and radio shuttle systems, mezzanine floors, material handling equipment and custom fabrication for warehouses across India.',
       path: '/',
       image: '/images/warehouse-hero.jpg',
-      imageAlt: 'Aerial view of a warehouse filled with Global Racks pallet racking',
+      imageAlt: 'Forklift operating in a drive-in racking aisle at a Global Racks warehouse',
     }),
   component: Home,
 })
@@ -29,16 +29,11 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-navy-950">
-        <DotGrid tone="white" className="absolute top-12 left-8 hidden lg:grid" />
-        <span
-          aria-hidden="true"
-          className="absolute -top-24 -right-24 size-96 rounded-full bg-brand-500/15 blur-3xl"
-        />
-        <div className="wrap relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
-          <div>
+      <section>
+        <HeroCarousel className="lg:min-h-[calc(100svh-6.5rem)]">
+          <div className="max-w-2xl">
             <p className="eyebrow text-brand-300">
-              <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" />
+              {/* <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-400" /> */}
               {site.positioning}
             </p>
             <h1 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl">
@@ -46,9 +41,9 @@ function Home() {
               <span className="text-brand-400">Storage Solutions</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-navy-100 sm:text-lg">
-              We design, fabricate and install high-quality storage and racking systems —
+              We design, fabricate and install high quality storage and racking systems,
               from heavy duty pallet racking to mezzanine floors, radio shuttle systems and
-              custom metalwork — tailored to your warehouse, your loads and your workflow.
+              custom metalworks, tailored to your warehouse, your loads and your workflow.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link to="/products" className={buttonVariants({ size: 'lg' })}>
@@ -66,7 +61,7 @@ function Home() {
                 {site.contact.phoneDisplay}
               </a>
             </div>
-            <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <dl className="mt-10 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-3">
               {stats.map((stat) => (
                 <div key={stat.label} className="border-l-2 border-brand-500 pl-4">
                   <dt className="order-2 text-xs font-medium tracking-wide text-navy-200 uppercase">
@@ -79,27 +74,18 @@ function Home() {
                 </div>
               ))}
             </dl>
-          </div>
-          <div className="relative">
-            <ClipFrame
-              src="/images/warehouse-hero.jpg"
-              alt="Aerial view of a distribution warehouse filled with Global Racks pallet racking"
-              priority
-              className="mx-auto max-w-xl"
-              imgClassName="aspect-16/10"
-            />
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+            <div className="mt-8 hidden flex-wrap gap-3 sm:flex">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/40 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-brand-400" />
                 Quality fabrication
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/40 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                 <BadgeCheck className="size-4 text-brand-400" />
-                Custom solutions since {site.founded}
+                ISO 9001:2015 certified
               </span>
             </div>
           </div>
-        </div>
+        </HeroCarousel>
       </section>
       {/* Featured products */}
       <section className="bg-steel-50 py-16 sm:py-24">
@@ -108,7 +94,7 @@ function Home() {
             <SectionHeading
               eyebrow="Our product portfolio"
               title="Storage systems for every warehouse need"
-              lead="Pallet racks, cantilever, mezzanines, drive-in systems, mobile racks and more — eleven racking families engineered, fabricated and installed in-house."
+              lead="Pallet racks, cantilever, mezzanines, drive-in systems, mobile racks and more, with eleven racking families engineered, fabricated and installed in-house."
             />
             <Link to="/products" className={buttonVariants({ variant: 'outline' })}>
               View all 11 systems
@@ -135,7 +121,7 @@ function Home() {
           <div>
             <SectionHeading
               eyebrow="Why Global Racks"
-              title="Quality fabrication. Custom solutions. Since 2024."
+              title="Quality fabrication and custom solutions"
               lead="Global Racks Storage Systems Private Limited is a leading rack manufacturing company specializing in the design, fabrication, and installation of high-quality storage and racking solutions."
             />
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -150,7 +136,7 @@ function Home() {
                 },
                 {
                   title: 'Turnkey installation',
-                  text: 'Survey, design, supply, erection and handover — one team.',
+                  text: 'Survey, design, supply, erection and handover from one team.',
                 },
                 {
                   title: 'Every industry',
@@ -178,14 +164,14 @@ function Home() {
         </div>
       </section>
       {/* Industries + adjacent offerings */}
-      <section className="bg-navy-950 py-16 sm:py-24">
+      <section className="bg-navy-900 py-16 sm:py-24">
         <div className="wrap">
           <SectionHeading
             tone="light"
             align="center"
             eyebrow="Industries we serve"
             title="Built around your operation"
-            lead="From 3PL distribution to cold storage and automotive — we tailor racking geometry, finishes and accessories to each sector's realities."
+            lead="From 3PL distribution to cold storage and automotive, we tailor racking geometry, finishes and accessories to each sector's realities."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
@@ -203,28 +189,7 @@ function Home() {
               </Link>
             ))}
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <Link
-              to="/material-handling"
-              className="group relative overflow-hidden rounded-2xl border border-white/10"
-            >
-              <img
-                src="/images/material-handling/reach-truck.jpg"
-                alt="Operator working a reach truck beside pallet racking"
-                loading="lazy"
-                decoding="async"
-                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <p className="font-display text-xl font-bold text-white">
-                  Material Handling Equipment
-                </p>
-                <p className="mt-1 text-sm text-navy-100">
-                  Pallet trucks, stackers, walkies and forklifts.
-                </p>
-              </div>
-            </Link>
+          {/* <div className="mt-12 grid gap-6">
             <Link
               to="/fabrication"
               className="group relative overflow-hidden rounded-2xl border border-white/10"
@@ -234,19 +199,19 @@ function Home() {
                 alt="Fabricators welding steel in the Global Racks workshop"
                 loading="lazy"
                 decoding="async"
-                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="aspect-16/9 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:aspect-21/9"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
                 <p className="font-display text-xl font-bold text-white">
-                  Fabrication &amp; Custom Metalwork
+                  Fabrication and Custom Metalwork
                 </p>
                 <p className="mt-1 text-sm text-navy-100">
                   Structural steel, PEB buildings and bespoke storage.
                 </p>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 

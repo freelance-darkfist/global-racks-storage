@@ -11,7 +11,7 @@
 import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as MaterialHandlingRouteImport } from './routes/material-handling'
+import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as FabricationRouteImport } from './routes/fabrication'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -19,13 +19,14 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductsIndexRouteImport } from './routes/products/index'
 import { Route as ProductsSlugRouteImport } from './routes/products/$slug'
+import { ServerRoute as ApiHealthServerRouteImport } from './routes/api/health'
 import { ServerRoute as ApiContactServerRouteImport } from './routes/api/contact'
 
 const rootServerRouteImport = createServerRootRoute()
 
-const MaterialHandlingRoute = MaterialHandlingRouteImport.update({
-  id: '/material-handling',
-  path: '/material-handling',
+const ManufacturingRoute = ManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -63,6 +64,11 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/products/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiHealthServerRoute = ApiHealthServerRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
+  getParentRoute: () => rootServerRouteImport,
+} as any)
 const ApiContactServerRoute = ApiContactServerRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
@@ -75,7 +81,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
-  '/material-handling': typeof MaterialHandlingRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -85,7 +91,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
-  '/material-handling': typeof MaterialHandlingRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
 }
@@ -96,7 +102,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fabrication': typeof FabricationRoute
   '/industries': typeof IndustriesRoute
-  '/material-handling': typeof MaterialHandlingRoute
+  '/manufacturing': typeof ManufacturingRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
 }
@@ -108,7 +114,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
-    | '/material-handling'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products'
   fileRoutesByTo: FileRoutesByTo
@@ -118,7 +124,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
-    | '/material-handling'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products'
   id:
@@ -128,7 +134,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fabrication'
     | '/industries'
-    | '/material-handling'
+    | '/manufacturing'
     | '/products/$slug'
     | '/products/'
   fileRoutesById: FileRoutesById
@@ -139,39 +145,43 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FabricationRoute: typeof FabricationRoute
   IndustriesRoute: typeof IndustriesRoute
-  MaterialHandlingRoute: typeof MaterialHandlingRoute
+  ManufacturingRoute: typeof ManufacturingRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
 }
 export interface FileServerRoutesByFullPath {
   '/api/contact': typeof ApiContactServerRoute
+  '/api/health': typeof ApiHealthServerRoute
 }
 export interface FileServerRoutesByTo {
   '/api/contact': typeof ApiContactServerRoute
+  '/api/health': typeof ApiHealthServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
   '/api/contact': typeof ApiContactServerRoute
+  '/api/health': typeof ApiHealthServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/contact'
+  fullPaths: '/api/contact' | '/api/health'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/contact'
-  id: '__root__' | '/api/contact'
+  to: '/api/contact' | '/api/health'
+  id: '__root__' | '/api/contact' | '/api/health'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
   ApiContactServerRoute: typeof ApiContactServerRoute
+  ApiHealthServerRoute: typeof ApiHealthServerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/material-handling': {
-      id: '/material-handling'
-      path: '/material-handling'
-      fullPath: '/material-handling'
-      preLoaderRoute: typeof MaterialHandlingRouteImport
+    '/manufacturing': {
+      id: '/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/manufacturing'
+      preLoaderRoute: typeof ManufacturingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -227,6 +237,13 @@ declare module '@tanstack/react-router' {
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthServerRouteImport
+      parentRoute: typeof rootServerRouteImport
+    }
     '/api/contact': {
       id: '/api/contact'
       path: '/api/contact'
@@ -243,7 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FabricationRoute: FabricationRoute,
   IndustriesRoute: IndustriesRoute,
-  MaterialHandlingRoute: MaterialHandlingRoute,
+  ManufacturingRoute: ManufacturingRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
 }
@@ -252,6 +269,7 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
   ApiContactServerRoute: ApiContactServerRoute,
+  ApiHealthServerRoute: ApiHealthServerRoute,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)

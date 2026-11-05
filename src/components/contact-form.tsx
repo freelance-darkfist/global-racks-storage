@@ -105,8 +105,8 @@ export function ContactForm() {
               </option>
             ))}
             <option value="Material Handling Equipment">Material Handling Equipment</option>
-            <option value="Fabrication & Custom Metalwork">
-              Fabrication &amp; Custom Metalwork
+            <option value="Fabrication and Custom Metalwork">
+              Fabrication and Custom Metalwork
             </option>
             <option value="Other">Other / not sure yet</option>
           </select>
@@ -130,7 +130,7 @@ export function ContactForm() {
           className="mt-6 flex items-center gap-2 rounded-xl bg-brand-50 px-4 py-3 text-sm font-semibold text-brand-700"
         >
           <CircleCheck className="size-5" />
-          Thank you — your enquiry has been recorded. Our team will call you back shortly.
+          Thank you. Your enquiry has been recorded, and our team will call you back shortly.
         </p>
       ) : null}
       {status === 'error' ? (

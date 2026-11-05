@@ -11,7 +11,7 @@ const enquirySchema = z.object({
 })
 
 /**
- * POST /api/contact — receives the website enquiry form.
+ * POST /api/contact, receives the website enquiry form.
  *
  * TODO(integration): forward validated enquiries to the client's inbox/CRM
  * (SMTP relay, Resend, or a CRM webhook). Until then enquiries are logged

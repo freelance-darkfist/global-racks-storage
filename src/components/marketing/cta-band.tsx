@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 
 export function CtaBand({
   title = 'Ready to optimise your warehouse space?',
-  lead = 'Share your layout and load requirements — our team will design, fabricate and install a storage system built around your operation.',
+  lead = 'Share your layout and load requirements. Our team will design, fabricate and install a storage system built around your operation.',
   className,
 }: {
   title?: string
@@ -15,7 +15,7 @@ export function CtaBand({
   className?: string
 }) {
   return (
-    <section className={cn('relative overflow-hidden bg-navy-900', className)}>
+    <section className={cn('relative overflow-hidden bg-navy-800', className)}>
       <DotGrid tone="white" className="absolute -top-6 right-8 hidden md:grid" />
       <span
         aria-hidden="true"

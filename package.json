@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:vercel": "START_TARGET=vercel vite build && node scripts/postbuild-vercel.mjs",
     "start": "node .output/server/index.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
@@ -15,7 +16,7 @@
     "node": "24.21.0"
   },
   "engines": {
-    "node": ">=24.21.0",
+    "node": "24.x",
     "pnpm": ">=12.10.1"
   },
   "devDependencies": {

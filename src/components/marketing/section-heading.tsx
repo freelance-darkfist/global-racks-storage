@@ -31,13 +31,13 @@ export function SectionHeading({
             tone === 'light' ? 'text-brand-300' : 'text-brand-600',
           )}
         >
-          <span
+          {/* <span
             aria-hidden="true"
             className={cn(
               'inline-block h-0.5 w-8',
               tone === 'light' ? 'bg-brand-300' : 'bg-brand-500',
             )}
-          />
+          /> */}
           {eyebrow}
         </p>
       ) : null}
@@ -75,7 +75,7 @@ export function Eyebrow({
 }) {
   return (
     <p className={cn('eyebrow text-brand-600', className)}>
-      <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-500" />
+      {/* <span aria-hidden="true" className="inline-block h-0.5 w-8 bg-brand-500" /> */}
       {children}
     </p>
   )

@@ -144,7 +144,7 @@ function ProductDetail() {
 
       <CtaBand
         title={`Discuss ${product.name} with our engineers`}
-        lead="Share your load profiles, building heights and throughput targets — we'll return a layout, loading plan and quotation."
+        lead="Share your load profiles, building heights and throughput targets, and we'll return a layout, loading plan and quotation."
       />
       <JsonLd
         data={[

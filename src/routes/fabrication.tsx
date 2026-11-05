@@ -18,9 +18,9 @@ import { breadcrumbLd, seoMeta } from '@/lib/seo'
 export const Route = createFileRoute('/fabrication')({
   head: () =>
     seoMeta({
-      title: `Fabrication Work & Custom Metal Solutions | ${site.name}`,
+      title: `Fabrication Work and Custom Metal Solutions | ${site.name}`,
       description:
-        'Custom metal fabrication: structural steel work, warehouse infrastructure, pre-engineered metal buildings, rack-supported warehouses, welding, metal forming and bespoke storage solutions.',
+        'Custom metal fabrication: structural steel work, warehouse infrastructure, pre-engineered metal buildings, rack-supported warehouses, welding, metal forming, metal pallets, metal bins and bespoke storage solutions.',
       path: '/fabrication',
       image: fabricationImages.welding.src,
       imageAlt: fabricationImages.welding.alt,
@@ -33,7 +33,7 @@ function Fabrication() {
     <>
       <PageHero
         eyebrow="Custom metalwork"
-        title="Fabrication work & custom solutions"
+        title="Fabrication work and custom solutions"
         lead={fabricationIntro}
         crumbs={[{ name: 'Home', path: '/' }, { name: 'Fabrication' }]}
       />
@@ -95,7 +95,7 @@ function Fabrication() {
 
       <CtaBand
         title="Have a drawing, a sketch or just a problem?"
-        lead="Our fabrication team quotes from drawings, samples or a site visit — whichever you have first."
+        lead="Our fabrication team quotes from drawings, samples or a site visit, whichever you have first."
       />
       <JsonLd
         data={breadcrumbLd([

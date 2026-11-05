@@ -45,19 +45,16 @@ export function organizationLd(): Json {
     alternateName: [site.name, site.shortName],
     url: site.url,
     logo: `${site.url}/images/logo.jpg`,
-    foundingDate: site.founded,
     slogan: site.tagline,
     description: site.description,
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        telephone: site.contact.phoneDisplay,
-        email: site.contact.emailDisplay,
-        contactType: 'sales',
-        areaServed: 'IN',
-        availableLanguage: ['en', 'hi'],
-      },
-    ],
+    contactPoint: site.contact.phones.map((phone, index) => ({
+      '@type': 'ContactPoint',
+      telephone: phone.display,
+      email: site.contact.emailDisplay,
+      contactType: index === 0 ? 'sales' : 'customer service',
+      areaServed: 'IN',
+      availableLanguage: ['en', 'hi'],
+    })),
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
@@ -125,9 +122,8 @@ export function localBusinessLd(): Json {
     name: site.legalName,
     image: `${site.url}/images/logo.jpg`,
     url: site.url,
-    telephone: site.contact.phoneDisplay,
+    telephone: site.contact.phones.map((phone) => phone.display),
     email: site.contact.emailDisplay,
-    foundingDate: site.founded,
     priceRange: 'INR',
     openingHours: 'Mo-Sa 09:00-19:00',
   }

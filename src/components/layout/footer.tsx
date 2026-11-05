@@ -1,15 +1,15 @@
 import { Link } from '@tanstack/react-router'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { products } from '@/content/products'
-import { navLinks, site } from '@/content/site'
+import { certifications, navLinks, site } from '@/content/site'
 
 export function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-navy-950 text-navy-100">
+    <footer className="bg-navy-900 text-navy-100">
       <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.name} — home`}>
+          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.name} home`}>
             <img
               src="/images/logo.jpg"
               alt=""
@@ -18,9 +18,16 @@ export function Footer() {
               className="h-12 w-auto rounded-md bg-white object-contain p-1"
             />
           </Link>
-          <p className="mt-4 text-sm leading-relaxed text-navy-200">{site.description}</p>
+          <p className="mt-3 text-sm font-bold tracking-[0.2em] text-white uppercase">
+            {site.tagline}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-navy-200">{site.description}</p>
           <p className="mt-4 text-xs font-semibold tracking-[0.14em] text-brand-300 uppercase">
             {site.positioning}
+          </p>
+          <p className="mt-4 text-xs text-navy-300">
+            <span className="font-semibold text-navy-200">Certifications:</span>{' '}
+            {certifications.map((certification) => certification.code).join(' · ')}
           </p>
         </div>
 
@@ -59,7 +66,7 @@ export function Footer() {
               ))}
             <li>
               <Link to="/contact" className="transition-colors hover:text-brand-300">
-                Contact &amp; Enquiry
+                Contact and Enquiry
               </Link>
             </li>
           </ul>
@@ -72,9 +79,17 @@ export function Footer() {
           <ul className="mt-4 grid gap-3 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 size-4 shrink-0 text-brand-400" />
-              <a href={site.contact.phoneHref} className="transition-colors hover:text-brand-300">
-                {site.contact.phoneDisplay}
-              </a>
+              <span className="grid gap-1">
+                {site.contact.phones.map((phone) => (
+                  <a
+                    key={phone.href}
+                    href={phone.href}
+                    className="transition-colors hover:text-brand-300"
+                  >
+                    {phone.display}
+                  </a>
+                ))}
+              </span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 size-4 shrink-0 text-brand-400" />
@@ -107,7 +122,7 @@ export function Footer() {
           </p>
           <p>
             <a
-              href={`${site.url}/sitemap.xml`}
+              href="/sitemap.xml"
               className="transition-colors hover:text-brand-300"
             >
               Sitemap

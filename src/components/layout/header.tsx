@@ -1,5 +1,5 @@
 import { Link, useRouterState } from '@tanstack/react-router'
-import { ChevronDown, Menu, Phone, X } from 'lucide-react'
+import { BadgeCheck, ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { useState } from 'react'
 import { buttonVariants } from '@/components/ui/button'
 import { productCategories, products } from '@/content/products'
@@ -14,14 +14,26 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy-900/10 bg-white/95 backdrop-blur">
-      <div className="hidden bg-navy-950 text-navy-100 md:block">
+      <div className="hidden bg-navy-900 text-navy-100 md:block">
         <div className="wrap flex items-center justify-between py-1.5 text-xs">
-          <p className="font-medium tracking-wide">{site.positioning}</p>
+          <p className="flex items-center gap-2 font-medium tracking-wide">
+            <BadgeCheck aria-hidden="true" className="size-3.5 text-brand-400" />
+            {site.certifiedStatement}
+          </p>
           <div className="flex items-center gap-5">
-            <a href={site.contact.phoneHref} className="transition-colors hover:text-brand-300">
-              {site.contact.phoneDisplay}
-            </a>
-            <a href={site.contact.emailHref} className="transition-colors hover:text-brand-300">
+            {site.contact.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="transition-colors hover:text-brand-300"
+              >
+                {phone.display}
+              </a>
+            ))}
+            <a
+              href={site.contact.emailHref}
+              className="hidden transition-colors hover:text-brand-300 lg:inline"
+            >
               {site.contact.emailDisplay}
             </a>
           </div>
@@ -29,7 +41,7 @@ export function Header() {
       </div>
 
       <div className="wrap flex h-18 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} — home`}>
+        <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
           <img
             src="/images/logo.jpg"
             alt=""
@@ -102,7 +114,7 @@ export function Header() {
                         onClick={() => setProductsOpen(false)}
                         className="col-span-2 mt-1 rounded-xl bg-navy-50 px-4 py-2.5 text-center text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-100"
                       >
-                        View all products &amp; systems
+                        View all products and systems
                       </Link>
                     </div>
                   </div>
@@ -191,13 +203,16 @@ export function Header() {
             >
               Get a Quote
             </Link>
-            <a
-              href={site.contact.phoneHref}
-              className="flex items-center justify-center gap-2 py-2 text-sm font-semibold text-navy-900"
-            >
-              <Phone className="size-4 text-brand-500" />
-              {site.contact.phoneDisplay}
-            </a>
+            {site.contact.phones.map((phone) => (
+              <a
+                key={phone.href}
+                href={phone.href}
+                className="flex items-center justify-center gap-2 py-1.5 text-sm font-semibold text-navy-900"
+              >
+                <Phone className="size-4 text-brand-500" />
+                {phone.display}
+              </a>
+            ))}
           </nav>
         </div>
       ) : null}

@@ -1,0 +1,15 @@
+node_modules
+.output
+.vercel
+.nitro
+.tanstack
+.vinxi
+dist
+.git
+.gitignore
+.DS_Store
+*.md
+.vscode
+.idea
+coverage
+*.log
