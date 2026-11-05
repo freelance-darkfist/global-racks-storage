@@ -8,6 +8,7 @@ dist/
 .nitro/
 .tanstack/
 .wrangler/
+.vercel/
 vite.config.timestamp_*.js
 app.config.timestamp_*.js
 
